@@ -78,8 +78,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllMethod.cs" />
+    <Compile Include="CodecType.cs" />
     <Compile Include="TextToSound.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TTSBackMessage.cs" />
+    <Compile Include="TTSDialog.cs" />
+    <Compile Include="TTSDialogEventArgs.cs" />
+    <Compile Include="TTSResult.cs" />
+    <Compile Include="VoiceDevice.cs" />
+    <Compile Include="VoiceTimbreExtention.cs" />
+    <Compile Include="VoiceTimbreType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
