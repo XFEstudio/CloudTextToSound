@@ -8,25 +8,27 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
+using XFE各类拓展.NetCore.ImplExtension;
 
-namespace CloudTextToSound
+namespace CloudTextToSound.NetCore
 {
     /// <summary>
     /// TTS对话类
     /// </summary>
-    public class TTSDialog
+    [CreateImpl]
+    public abstract class TTSDialog
     {
-        private readonly int maxTime = 600;
-        private readonly int deviceNumber = 0;
-        private readonly int appId;
-        private readonly string uUID = Guid.NewGuid().ToString();
-        private readonly string secretId;
-        private readonly string secretKey;
-        private BufferedWaveProvider bufferedWaveProvider;
-        private WaveOutEvent waveOut;
-        private readonly CodecType codecType;
-        private readonly VoiceTimbreType voiceTimbreType;
-        private const string ParamAction = "TextToStreamAudioWS";
+        private protected int maxTime = 600;
+        private protected int deviceNumber = 0;
+        private protected int appId;
+        private protected string uUID = Guid.NewGuid().ToString();
+        private protected string secretId;
+        private protected string secretKey;
+        private protected BufferedWaveProvider bufferedWaveProvider;
+        private protected WaveOutEvent waveOut;
+        private protected  CodecType codecType;
+        private protected VoiceTimbreType voiceTimbreType;
+        private protected const string ParamAction = "TextToStreamAudioWS";
         /// <summary>
         /// TTS的文字
         /// </summary>

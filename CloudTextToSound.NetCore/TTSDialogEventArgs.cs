@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CloudTextToSound
+namespace CloudTextToSound.NetCore
 {
     /// <summary>
     /// TTS对话事件参数

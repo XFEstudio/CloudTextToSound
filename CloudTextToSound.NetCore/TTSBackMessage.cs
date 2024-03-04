@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
+using XFE各类拓展.NetCore.ImplExtension;
 
-namespace CloudTextToSound
+namespace CloudTextToSound.NetCore
 {
     /// <summary>
     /// TTS返回消息
@@ -15,6 +16,7 @@ namespace CloudTextToSound
     /// <param name="messageId"></param>
     /// <param name="result"></param>
     /// <param name="final"></param>
+    [CreateImpl]
     [method: JsonConstructor]
     public class TTSBackMessage(int code, string message, string sessionId, string requestId, string messageId, TTSResult result, int final)
     {

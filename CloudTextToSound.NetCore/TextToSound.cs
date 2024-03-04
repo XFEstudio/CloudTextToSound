@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CloudTextToSound
+namespace CloudTextToSound.NetCore
 {
     /// <summary>
     /// 语音合成类
@@ -44,7 +44,7 @@ namespace CloudTextToSound
             for (int i = 0; i < inputDeviceCount; i++)
             {
                 var capabilities = WaveOut.GetCapabilities(i);
-                deviceList.Add(new VoiceDevice(i, capabilities.ProductName));
+                deviceList.Add(new VoiceDeviceImpl(i, capabilities.ProductName));
             }
             return deviceList;
         }
@@ -55,7 +55,7 @@ namespace CloudTextToSound
         /// <returns>TTS对话</returns>
         public TTSDialog CreateDialog(VoiceTimbreType voiceTimbreType)
         {
-            return new TTSDialog(appId, secretId, secretKey, 600, 0, CodecType.pcm, voiceTimbreType);
+            return new TTSDialogImpl(appId, secretId, secretKey, 600, 0, CodecType.pcm, voiceTimbreType);
         }
         /// <summary>
         /// 创建一个实时TTS的实例
@@ -65,7 +65,7 @@ namespace CloudTextToSound
         /// <returns>TTS对话</returns>
         public TTSDialog CreateDialog(VoiceDevice voiceDevice, VoiceTimbreType voiceTimbreType)
         {
-            return new TTSDialog(appId, secretId, secretKey, 600, voiceDevice.DeviceIndex, CodecType.pcm, voiceTimbreType);
+            return new TTSDialogImpl(appId, secretId, secretKey, 600, voiceDevice.DeviceIndex, CodecType.pcm, voiceTimbreType);
         }
         /// <summary>
         /// 创建一个实时TTS的实例
@@ -75,7 +75,7 @@ namespace CloudTextToSound
         /// <returns>TTS对话</returns>
         public TTSDialog CreateDialog(int maxTime, VoiceTimbreType voiceTimbreType)
         {
-            return new TTSDialog(appId, secretId, secretKey, maxTime, 0, CodecType.pcm, voiceTimbreType);
+            return new TTSDialogImpl(appId, secretId, secretKey, maxTime, 0, CodecType.pcm, voiceTimbreType);
         }
         /// <summary>
         /// 创建一个实时TTS的实例
@@ -87,7 +87,7 @@ namespace CloudTextToSound
         /// <returns></returns>
         public TTSDialog CreateDialog(int maxTime, VoiceDevice voiceDevice, CodecType codecType, VoiceTimbreType voiceTimbreType)
         {
-            return new TTSDialog(appId, secretId, secretKey, maxTime, voiceDevice.DeviceIndex, codecType, voiceTimbreType);
+            return new TTSDialogImpl(appId, secretId, secretKey, maxTime, voiceDevice.DeviceIndex, codecType, voiceTimbreType);
         }
         /// <summary>
         /// 播放音频列表

@@ -1,4 +1,6 @@
-﻿namespace CloudTextToSound
+﻿using XFE各类拓展.NetCore.ImplExtension;
+
+namespace CloudTextToSound.NetCore
 {
     /// <summary>
     /// 音频设备类
@@ -8,7 +10,8 @@
     /// </remarks>
     /// <param name="DeviceIndex">音频设备的索引</param>
     /// <param name="DeviceName">音频设备的名称和描述</param>
-    public class VoiceDevice(int DeviceIndex, string DeviceName)
+    [CreateImpl]
+    public abstract class VoiceDevice(int DeviceIndex, string DeviceName)
     {
         /// <summary>
         /// 获取字符串名称

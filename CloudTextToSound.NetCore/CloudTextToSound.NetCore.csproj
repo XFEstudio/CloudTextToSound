@@ -3,13 +3,13 @@
     <OutputType>Library</OutputType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DocumentationFile>bin\Debug\CloudTextToSound.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\CloudTextToSound.NetCore.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>net8.0-windows</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <AssemblyTitle>CloudTextToSound</AssemblyTitle>
-    <Product>CloudTextToSound</Product>
+    <AssemblyTitle>CloudTextToSound.NetCore</AssemblyTitle>
+    <Product>CloudTextToSound.NetCore</Product>
     <Copyright>Copyright ©  2023</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>

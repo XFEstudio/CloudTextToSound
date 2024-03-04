@@ -1,4 +1,4 @@
-﻿namespace CloudTextToSound
+﻿namespace CloudTextToSound.NetCore
 {
     /// <summary>
     /// 语音返回的音频格式

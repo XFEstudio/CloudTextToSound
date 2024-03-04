@@ -1,4 +1,4 @@
-﻿namespace CloudTextToSound
+﻿namespace CloudTextToSound.NetCore
 {
     /// <summary>
     /// 语音合成音色类型

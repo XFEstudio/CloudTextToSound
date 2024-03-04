@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllMethod.cs" />
+    <Compile Include="CloudTextToSoundException.cs" />
     <Compile Include="CodecType.cs" />
     <Compile Include="TextToSound.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,4 @@
-﻿namespace CloudTextToSound
+﻿namespace CloudTextToSound.NetCore
 {
     /// <summary>
     /// 音色枚举类型扩展
@@ -10,7 +10,7 @@
         /// </summary>
         /// <param name="voiceTimbreType"></param>
         /// <returns></returns>
-        /// <exception cref="CloudTextToSoundException"></exception>
+        /// <exception cref="CloudTextToSound.NetCoreException"></exception>
         public static int GetID(this VoiceTimbreType voiceTimbreType)
         {
             return voiceTimbreType switch
@@ -109,7 +109,7 @@
                 VoiceTimbreType.智航 => 401006,
                 VoiceTimbreType.智婷 => 401007,
                 VoiceTimbreType.智霞 => 401008,
-                _ => throw new CloudTextToSoundException("未知的语音类型"),
+                _ => throw new CloudTextToSoundExceptionImpl("未知的语音类型"),
             };
         }
     }

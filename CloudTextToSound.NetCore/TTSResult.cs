@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
+using XFE各类拓展.NetCore.ImplExtension;
 
-namespace CloudTextToSound
+namespace CloudTextToSound.NetCore
 {
     /// <summary>
     /// TTS结果
@@ -9,8 +10,9 @@ namespace CloudTextToSound
     /// TTS结果
     /// </remarks>
     /// <param name="subtitles"></param>
+    [CreateImpl]
     [method: JsonConstructor]
-    public class TTSResult(TTSResult.TTSResultStruct[] subtitles)
+    public abstract class TTSResult(TTSResult.TTSResultStruct[] subtitles)
     {
         /// <summary>
         /// TTS结构体
