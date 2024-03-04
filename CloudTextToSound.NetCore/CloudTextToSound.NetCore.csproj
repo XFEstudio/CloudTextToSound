@@ -9,11 +9,27 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyTitle>CloudTextToSound.NetCore</AssemblyTitle>
+    <Authors>XFEstudio</Authors>
     <Product>CloudTextToSound.NetCore</Product>
-    <Copyright>Copyright ©  2023</Copyright>
+    <Copyright>Copyright © XFEstudio 2023</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>CloudTextToSound.NetCore</Title>
+    <Description>实时转文本为语音，对接腾讯云的API</Description>
+    <PackageProjectUrl>https://github.com/XFEstudio/CloudTextToSound</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/XFEstudio/CloudTextToSound</RepositoryUrl>
+    <PackageLicenseExpression>WTFPL</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>The First Release</PackageReleaseNotes>
   </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
