@@ -3,7 +3,7 @@
     /// <summary>
     /// 音色枚举类型扩展
     /// </summary>
-    public static class VoiceTimbreExtention
+    public static class VoiceTimbreExtension
     {
         /// <summary>
         /// 获取音色ID

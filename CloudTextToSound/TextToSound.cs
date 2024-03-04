@@ -10,11 +10,11 @@ namespace CloudTextToSound
     /// </summary>
     public class TextToSound
     {
-        private int AppId;
-        private bool PlayAudioList = false;
-        private bool FirstAudioPlayed = false;
-        private string SecretId;
-        private string SecretKey;
+        private int appId;
+        private bool playAudioList = false;
+        private bool firstAudioPlayed = false;
+        private string secretId;
+        private string secretKey;
         private readonly List<TTSDialog> dialogs = new List<TTSDialog>();
         /// <summary>
         /// 播放音频列表结束事件
@@ -23,15 +23,15 @@ namespace CloudTextToSound
         /// <summary>
         /// 初始化实时转写
         /// </summary>
-        /// <param name="AppId">应用的APPID</param>
-        /// <param name="SecretId">应用的SecretID</param>
-        /// <param name="SecretKey">应用的SecertKey</param>
+        /// <param name="appId">应用的APPID</param>
+        /// <param name="secretId">应用的SecretID</param>
+        /// <param name="secretKey">应用的SecertKey</param>
         /// <returns></returns>
-        public void InitializTTS(int AppId, string SecretId, string SecretKey)
+        public void InitializeTTS(int appId, string secretId, string secretKey)
         {
-            this.AppId = AppId;
-            this.SecretId = SecretId;
-            this.SecretKey = SecretKey;
+            this.appId = appId;
+            this.secretId = secretId;
+            this.secretKey = secretKey;
         }
         /// <summary>
         /// 获取当前的音频输入设备列表
@@ -40,13 +40,13 @@ namespace CloudTextToSound
         public static List<VoiceDevice> GetVoiceOutputDevice()
         {
             var inputDeviceCount = WaveOut.DeviceCount;
-            var DeviceList = new List<VoiceDevice>();
+            var deviceList = new List<VoiceDevice>();
             for (int i = 0; i < inputDeviceCount; i++)
             {
                 var capabilities = WaveOut.GetCapabilities(i);
-                DeviceList.Add(new VoiceDevice(i, capabilities.ProductName));
+                deviceList.Add(new VoiceDevice(i, capabilities.ProductName));
             }
-            return DeviceList;
+            return deviceList;
         }
         /// <summary>
         /// 创建一个实时TTS的实例
@@ -55,7 +55,7 @@ namespace CloudTextToSound
         /// <returns>TTS对话</returns>
         public TTSDialog CreateDialog(VoiceTimbreType voiceTimbreType)
         {
-            return new TTSDialog(AppId, SecretId, SecretKey, 600, 0, CodecType.pcm, voiceTimbreType);
+            return new TTSDialog(appId, secretId, secretKey, 600, 0, CodecType.pcm, voiceTimbreType);
         }
         /// <summary>
         /// 创建一个实时TTS的实例
@@ -65,7 +65,7 @@ namespace CloudTextToSound
         /// <returns>TTS对话</returns>
         public TTSDialog CreateDialog(VoiceDevice voiceDevice, VoiceTimbreType voiceTimbreType)
         {
-            return new TTSDialog(AppId, SecretId, SecretKey, 600, voiceDevice.DeviceIndex, CodecType.pcm, voiceTimbreType);
+            return new TTSDialog(appId, secretId, secretKey, 600, voiceDevice.DeviceIndex, CodecType.pcm, voiceTimbreType);
         }
         /// <summary>
         /// 创建一个实时TTS的实例
@@ -75,7 +75,7 @@ namespace CloudTextToSound
         /// <returns>TTS对话</returns>
         public TTSDialog CreateDialog(int maxTime, VoiceTimbreType voiceTimbreType)
         {
-            return new TTSDialog(AppId, SecretId, SecretKey, maxTime, 0, CodecType.pcm, voiceTimbreType);
+            return new TTSDialog(appId, secretId, secretKey, maxTime, 0, CodecType.pcm, voiceTimbreType);
         }
         /// <summary>
         /// 创建一个实时TTS的实例
@@ -87,25 +87,25 @@ namespace CloudTextToSound
         /// <returns></returns>
         public TTSDialog CreateDialog(int maxTime, VoiceDevice voiceDevice, CodecType codecType, VoiceTimbreType voiceTimbreType)
         {
-            return new TTSDialog(AppId, SecretId, SecretKey, maxTime, voiceDevice.DeviceIndex, codecType, voiceTimbreType);
+            return new TTSDialog(appId, secretId, secretKey, maxTime, voiceDevice.DeviceIndex, codecType, voiceTimbreType);
         }
         /// <summary>
         /// 播放音频列表
         /// </summary>
         public void StartPlayAudioList()
         {
-            if (!PlayAudioList)
+            if (!playAudioList)
             {
-                PlayAudioList = true;
+                playAudioList = true;
                 Task.Run(() =>
                 {
-                    while (PlayAudioList)
+                    while (playAudioList)
                     {
                         if (dialogs.Count > 0)
                         {
-                            if (!FirstAudioPlayed)
+                            if (!firstAudioPlayed)
                             {
-                                FirstAudioPlayed = true;
+                                firstAudioPlayed = true;
                             }
                             dialogs[0].StartTTS().Wait();
                             if (dialogs.Count > 0)
@@ -113,10 +113,10 @@ namespace CloudTextToSound
                                 dialogs.RemoveAt(0);
                             }
                         }
-                        else if (FirstAudioPlayed)
+                        else if (firstAudioPlayed)
                         {
                             AudioListPlayEnd?.Invoke(this, new EventArgs());
-                            FirstAudioPlayed = false;
+                            firstAudioPlayed = false;
                         }
                     }
                 });
@@ -172,7 +172,7 @@ namespace CloudTextToSound
         /// </summary>
         public void EndPlayAudioList()
         {
-            PlayAudioList = false;
+            playAudioList = false;
         }
     }
 }

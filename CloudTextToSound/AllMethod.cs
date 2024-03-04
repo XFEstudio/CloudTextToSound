@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CloudTextToSound
 {
@@ -20,8 +17,10 @@ namespace CloudTextToSound
         /// <returns></returns>
         public static string GetEncodeSignature(string sKey, string sSrc)
         {
-            HMACSHA1 hMACSHA1 = new HMACSHA1();
-            hMACSHA1.Key = Encoding.UTF8.GetBytes(sKey);
+            HMACSHA1 hMACSHA1 = new HMACSHA1
+            {
+                Key = Encoding.UTF8.GetBytes(sKey)
+            };
             string Sign = Convert.ToBase64String(hMACSHA1.ComputeHash(Encoding.UTF8.GetBytes(sSrc)));
             return Sign;
         }

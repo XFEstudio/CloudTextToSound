@@ -210,13 +210,13 @@ namespace CloudTextToSound
         {
             waveOut.Stop();
         }
-        internal TTSDialog(int AppId, string SecretId, string SecretKey, int MaxTime, int DeviceNumber, CodecType codecType, VoiceTimbreType voiceTimbreType)
+        internal TTSDialog(int appId, string secretId, string secretKey, int maxTime, int deviceNumber, CodecType codecType, VoiceTimbreType voiceTimbreType)
         {
-            this.appId = AppId;
-            this.secretId = SecretId;
-            this.secretKey = SecretKey;
-            this.maxTime = MaxTime;
-            this.deviceNumber = DeviceNumber;
+            this.appId = appId;
+            this.secretId = secretId;
+            this.secretKey = secretKey;
+            this.maxTime = maxTime;
+            this.deviceNumber = deviceNumber;
             this.codecType = codecType;
             this.voiceTimbreType = voiceTimbreType;
         }
