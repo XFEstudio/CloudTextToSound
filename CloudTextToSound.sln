@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudTextToSound", "CloudTextToSound\CloudTextToSound.csproj", "{6E19EFEA-7F91-4D06-9366-7201183D67E5}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudTextToSound.NetCore", "CloudTextToSound.NetCore\CloudTextToSound.NetCore.csproj", "{CCD6D6F1-D841-433C-8D17-61B0E506195E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6E19EFEA-7F91-4D06-9366-7201183D67E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E19EFEA-7F91-4D06-9366-7201183D67E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E19EFEA-7F91-4D06-9366-7201183D67E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD6D6F1-D841-433C-8D17-61B0E506195E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD6D6F1-D841-433C-8D17-61B0E506195E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD6D6F1-D841-433C-8D17-61B0E506195E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD6D6F1-D841-433C-8D17-61B0E506195E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

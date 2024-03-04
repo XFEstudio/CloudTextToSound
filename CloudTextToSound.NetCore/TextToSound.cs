@@ -15,7 +15,7 @@ namespace CloudTextToSound
         private bool firstAudioPlayed = false;
         private string secretId;
         private string secretKey;
-        private readonly List<TTSDialog> dialogs = new List<TTSDialog>();
+        private readonly List<TTSDialog> dialogs = [];
         /// <summary>
         /// 播放音频列表结束事件
         /// </summary>
