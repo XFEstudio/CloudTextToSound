@@ -12,8 +12,6 @@
     <Authors>XFEstudio</Authors>
     <Product>CloudTextToSound.NetCore</Product>
     <Copyright>Copyright © XFEstudio 2023</Copyright>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>CloudTextToSound.NetCore</Title>
     <Description>实时转文本为语音，对接腾讯云的API</Description>
@@ -22,7 +20,9 @@
     <RepositoryUrl>https://github.com/XFEstudio/CloudTextToSound</RepositoryUrl>
     <PackageLicenseExpression>WTFPL</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>The First Release</PackageReleaseNotes>
+    <PackageReleaseNotes>更改包引用</PackageReleaseNotes>
+    <Version>2.0.0</Version>
+    <PackageTags>XFE;VTT;Tencent;TencentCloud</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <None Include="..\README.md">
@@ -44,6 +44,6 @@
     <PackageReference Include="NAudio.Wasapi" Version="2.2.1" />
     <PackageReference Include="NAudio.WinForms" Version="2.2.1" />
     <PackageReference Include="NAudio.WinMM" Version="2.2.1" />
-    <PackageReference Include="XFE各类拓展.NetCore" Version="1.6.2" />
+    <PackageReference Include="XFE各类拓展.NetCore" Version="1.7.6" />
   </ItemGroup>
 </Project>
