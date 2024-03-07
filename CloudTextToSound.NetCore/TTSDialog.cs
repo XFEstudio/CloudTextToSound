@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
-using XFE各类拓展.NetCore.ImplExtension;
+using XFEExtension.NetCore.ImplExtension;
 
 namespace CloudTextToSound.NetCore
 {

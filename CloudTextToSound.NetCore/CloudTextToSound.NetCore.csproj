@@ -21,7 +21,7 @@
     <PackageLicenseExpression>WTFPL</PackageLicenseExpression>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes>更改包引用</PackageReleaseNotes>
-    <Version>2.0.0</Version>
+    <Version>2.0.1</Version>
     <PackageTags>XFE;VTT;Tencent;TencentCloud</PackageTags>
   </PropertyGroup>
   <ItemGroup>
@@ -44,6 +44,6 @@
     <PackageReference Include="NAudio.Wasapi" Version="2.2.1" />
     <PackageReference Include="NAudio.WinForms" Version="2.2.1" />
     <PackageReference Include="NAudio.WinMM" Version="2.2.1" />
-    <PackageReference Include="XFE各类拓展.NetCore" Version="1.7.6" />
+    <PackageReference Include="XFEExtension.NetCore" Version="2.0.0" />
   </ItemGroup>
 </Project>
